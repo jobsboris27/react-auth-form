@@ -1,26 +1,37 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import AuthPage from "./components/AuthPage/AuthPage";
+import { IntlProvider } from "react-intl";
+import { addLocaleData } from 'react-intl';
+import ru from 'react-intl/locale-data/ru';
+import en from 'react-intl/locale-data/en';
+import translations from "./translations";
+
+addLocaleData([...ru, ...en]);
 
 class App extends Component {
+  
+  constructor() {
+    super();
+    this.state = {
+      locale: "ru"
+    }
+  }
+
+  onChangeLanguage(locale) {
+    if (this.state.locale === locale) return;
+
+    this.setState({
+      locale
+    })
+  }
+
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
+      <IntlProvider locale={this.state.locale} key={this.state.locale} messages={translations[this.state.locale]}>
+        <div className="app">
+          <AuthPage changeLanguage={this.onChangeLanguage.bind(this)} />
+        </div>
+      </IntlProvider>
     );
   }
 }

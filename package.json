@@ -27,7 +27,12 @@
     "not op_mini all"
   ],
   "devDependencies": {
+    "babel-jest": "^23.6.0",
+    "enzyme": "^3.7.0",
+    "enzyme-adapter-react-16": "^1.7.0",
+    "enzyme-to-json": "^3.3.4",
     "flow-bin": "^0.86.0",
-    "flow-typed": "^2.5.1"
+    "flow-typed": "^2.5.1",
+    "jest": "^23.6.0"
   }
 }

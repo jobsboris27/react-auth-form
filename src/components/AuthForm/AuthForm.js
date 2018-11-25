@@ -32,6 +32,7 @@ const renderField = ({ input, label, type, meta: { touched, error } }: RenderFie
 
 
 const AuthForm = (props: AuthFormProps) => {
+  console.log(props, "props");
   const { handleSubmit, submitting, invalid, error, intl, dirty } = props;
   const buttonContent = (
     submitting ?

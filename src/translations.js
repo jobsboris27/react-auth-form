@@ -10,6 +10,7 @@ export default {
     "app.login.success": "Вы авторизованы!",
     "app.login.lang_toggle_ru": "Русский",
     "app.login.lang_toggle_en": "Английский",
+    "app.login.checkbox": "Запомнить меня",
   },
   "en": {
     "app.login": "Login",
@@ -22,5 +23,6 @@ export default {
     "app.login.success": "You were authorized!",
     "app.login.lang_toggle_ru": "Russian",
     "app.login.lang_toggle_en": "English",
+    "app.login.checkbox": "Remember me",
   },
 }

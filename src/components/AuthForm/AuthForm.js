@@ -67,6 +67,11 @@ const AuthForm = (props: AuthFormProps) => {
           validate={[required, minLength6]}
           label={intl.formatMessage({id: "app.login.password"})}
         />
+        <label className="form__checkbox">
+          <input type="checkbox"/>
+          <span className="form__checkbox-checkmark"/>
+          <FormattedMessage id="app.login.checkbox" />
+        </label>
       </div>
       <div className="form__row">
         <button type="submit" disabled={!dirty || invalid || submitting}>

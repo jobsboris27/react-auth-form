@@ -2,7 +2,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100vh;
+  /* height: 100vh; */
+  height: 900px;
   background: linear-gradient(200deg, #0dc04b, #36e1c7);
 }
 
@@ -34,12 +35,14 @@
 .auth-page__footer {
   margin-top: 20px;
   top: 100%;
-  width: 170px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
 }
 
+.auth-page__footer button + span {
+  margin: 0 10px;
+}
 .auth-page__footer button {
   padding: 0;
   opacity: 0.4;
@@ -89,8 +92,4 @@
   flex-flow: column;
   justify-content: space-between;
   align-items: center;
-}
-
-.auth-page__form-content {
-
 }

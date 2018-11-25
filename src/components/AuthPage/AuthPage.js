@@ -1,11 +1,19 @@
+// @flow
+
 import React, { Component } from "react";
 import AuthForm from "../AuthForm/AuthForm";
 import { SubmissionError } from "redux-form";
 import { FormattedMessage, injectIntl } from "react-intl";
+import { type IntlShape } from "react-intl";
 import { mockResponse } from "../../mock";
 import "./AuthPage.css";
 
-class AuthPage extends Component {
+type Props = {
+  intl: IntlShape;
+  changeLanguage: (locale: string) => void;
+}
+
+class AuthPage extends Component<Props, {}> {
 
   async onHandleSubmit(values) {
     try {
@@ -22,12 +30,13 @@ class AuthPage extends Component {
   render() {
     const { intl, changeLanguage } = this.props;
     const isRuLocale = intl.locale === "ru";
+    const rootFolder = process.env.PUBLIC_URL ? process.env.PUBLIC_URL : "";
 
     return (
       <div className="auth-page">
         <div className="auth-page__container">
           <div className="auth-page__header">
-            <img src={`${process.env.PUBLIC_URL}/assets/logo.svg`} alt="Teachbase.ru" />
+            <img src={`${rootFolder}/assets/logo.svg`} alt="Teachbase.ru" />
           </div>
           <div className="auth-page__form">
             <div className="auth-page__form-header">
